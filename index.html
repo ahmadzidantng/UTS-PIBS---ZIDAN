@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB PROFIL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <!-- Ganti 'nama-file-foto.jpg' dengan file foto Anda yang sebenarnya -->
+        <img src="profilepict.png" alt="Foto Profil" class="foto-profil">
+        <h1>PROFIL MAHASISWA</h1>
+    </header>
+
+    <div class="main-container">
+        <!-- NAV -->
+        <nav>
+            <ul>
+                <li><a href="#" onclick="tampilkanKonten('biodata')">Biodata</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pendidikan')">Pendidikan</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pengalaman')">Pengalaman</a></li>
+                <li><a href="#" onclick="tampilkanKonten('keahlian')">Keahlian</a></li>
+                <li><a href="#" onclick="tampilkanKonten('publikasi')">Publikasi</a></li>
+            </ul>
+        </nav>
+
+        <!-- SECTION -->
+        <section>
+            <!-- Konten Biodata (Tampil awal) -->
+            <div id="biodata" class="konten-section aktif">
+                <h2>Biodata</h2>
+                <p><strong>NIM:</strong> 2025081049</p>
+                <p><strong>Nama:</strong> Ahmad Zidan</p>
+                <p><strong>Agama:</strong> Islam</p>
+                <p><strong>Tanggal Lahir:</strong> 11 November 2005</p>
+                <p><strong>Tempat Lahir:</strong> Tangerang</p>
+            </div>
+
+            <!-- Konten Pendidikan -->
+            <div id="pendidikan" class="konten-section" style="display:none;">
+                <h2>Pendidikan</h2>
+                <p>SDIT DARUL QURAN MULIA</p>
+                <p>MTS SWASTA IBNU TAIMIYAH</p>
+                <p>MA SWASTA IBNU TAIMIYAH</p>
+                <p>S1 - Sarjana Komputer</p>
+                <p>S2 - Magister Manajemen Sistem Informasi</p>
+            </div>
+
+           <!-- Konten Pengalaman -->
+            <div id="pengalaman" class="konten-section" style="display:none;">
+                <h2>Pengalaman</h2>
+                
+                <!-- Kotak Pengalaman Organisasi -->
+                <p>
+                    <strong>PENGALAMAN ORGANISASI</strong><br><br>
+                    <strong>HIMPUNAN MAHASISWA SISTEM INFORMASI (HIMASIF UPJ)</strong><br>
+                    Anggota Divisi Riset dan Akademik
+                </p>
+
+                <!-- Kotak Pengalaman Kepanitiaan -->
+                <p>
+                    <strong>PENGALAMAN KEPANITIAAN</strong><br><br>
+                    &bull; <strong>CONCORDIA TAMARATIVE 2025</strong><br>
+                    &nbsp;&nbsp;Anggota Divisi Perlengkapan/Sarana dan Prasarana<br><br>
+                    
+                    &bull; <strong>SISTEM INFORMASI BUKA PUASA BERSAMA (SIFTAR) 2025</strong><br>
+                    &nbsp;&nbsp;Ketua Pelaksana<br><br>
+                    
+                    &bull; <strong>PRIMA UPJ 2026</strong><br>
+                    &nbsp;&nbsp;Anggota Divisi Mentor<br><br>
+                    
+                    &bull; <strong>HIMASIF COMPANY VISIT 2026</strong><br>
+                    &nbsp;&nbsp;Koordinator Divisi Akomodasi
+                </p>
+            </div>
+
+            <!-- Konten Keahlian -->
+            <div id="keahlian" class="konten-section" style="display:none;">
+                <h2>Keahlian</h2>
+                <p>WEB DEVELOPMENT.</p>
+                <p>KOMUNIKASI.</p>
+                <p>CEPAT BERADAPTASI.</p>
+                <p>KERJASAMA TIM.</p>
+                <p>MANAJEMEN LOGISTIK.</p>
+            </div>
+
+            <!-- Konten Publikasi -->
+            <div id="publikasi" class="konten-section" style="display:none;">
+                <h2>Publikasi</h2>
+                <p>Daftar jurnal dan publikasi ilmiah.</p>
+            </div>
+        </section>
+
+        <!-- ASIDE -->
+        <aside>
+            <h2>Hobi:</h2>
+            <ul>
+                <li>Nonton</li>
+                <li>Jalan jalan</li>
+                <li>Membaca</li>
+                <li>Menulis</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-kiri">
+            <p>Instagram: @hmdzidann</p>
+            <p>FB: @hmdzidann</p>
+        </div>
+        <div class="footer-tengah">
+            <p>&copy; Copyright 2026. All Rights Reserved</p>
+        </div>
+        <div class="footer-kanan">
+            <p><strong>WEB ZIDAN</strong></p>
+            <p>SISTEM INFORMASI 25</p>
+        </div>
+    </footer>
+
+    <!-- Script sederhana untuk pergantian konten di Section -->
+    <script>
+        function tampilkanKonten(id) {
+            // Sembunyikan semua section
+            var sections = document.querySelectorAll('.konten-section');
+            sections.forEach(function (sec) {
+                sec.style.display = 'none';
+            });
+            // Tampilkan section yang diklik
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

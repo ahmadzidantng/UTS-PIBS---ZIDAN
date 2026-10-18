@@ -1,0 +1,326 @@
+/* Import Font Bebas Neue dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Mengatur box-sizing untuk semua elemen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px; 
+    padding: 10px;
+    min-height: 100vh;
+    
+    /* BACKGROUND MENGGUNAKAN GAMBAR */
+    background-image: url('bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    
+    color: #FFFFFF; 
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8); 
+}
+
+/* --- Styling Dasar Glassmorph Tanpa Outline (Wadah Utama) --- */
+header, nav, section, aside, footer {
+    border: none; 
+    padding: 15px; 
+    margin-bottom: 10px; 
+    
+    background: rgba(255, 252, 250, 0.1); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.foto-profil {
+    width: 60px;          
+    height: 60px;         
+    border-radius: 10%;   
+    object-fit: cover;    
+    margin: 10px 30px 10px 20px; 
+    border: 2px solid #FFFFFF; 
+}
+
+/* Base Navigasi Menu & Scroll */
+nav, section, aside {
+    overflow: auto; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+
+nav ul li {
+    margin-bottom: 0; 
+}
+
+/* Kotak untuk Navigasi (Kiri/Atas) */
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    background: rgba(255, 252, 250, 0.08); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: 0.3s;
+    text-align: left; 
+    white-space: nowrap; 
+}
+
+nav ul li a:hover {
+    color: #FFFFFF; 
+    background: rgba(255, 252, 250, 0.2); 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px); 
+}
+
+/* Kotak untuk Section (Tengah) dan Aside (Kanan) */
+.konten-section p, aside ul li {
+    display: block;
+    color: #FFFFFF; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    background: rgba(255, 252, 250, 0.08); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: 0.3s;
+    text-align: left; 
+    margin-bottom: 10px;
+}
+
+.konten-section p:hover, aside ul li:hover {
+    background: rgba(255, 252, 250, 0.2); 
+    transform: translateY(-2px); 
+}
+
+/* Styling Tambahan Teks */
+.konten-section h2, aside h2 {
+    margin-bottom: 15px; 
+    font-size: 1.3em; 
+    color: #FFFFFF; 
+    padding-left: 5px;
+}
+
+aside ul {
+    list-style-type: none;
+    margin-top: 10px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* =======================================================
+   FOOTER - DIRAPIKAN UNTUK MOBILE FIRST
+   ======================================================= */
+footer {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1em; 
+    color: #FFFFFF; 
+    width: 100%; 
+    text-align: center; 
+}
+
+.footer-kiri, .footer-tengah, .footer-kanan {
+    width: 100%;
+}
+
+.footer-kiri p, .footer-kanan p {
+    margin: 3px 0; 
+}
+
+
+/* =======================================================
+   MEDIA QUERIES (4 Layout Sesuai Ketentuan Soal)
+   ======================================================= */
+
+/* 1. Layout Smart Phone (Default / Mobile First) */
+.main-container {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+}
+nav, section, aside {
+    width: 100%; 
+}
+nav ul {
+    flex-direction: column; 
+}
+
+
+/* 2. Layout Tablet Portrait (Lebar layar >= 600px s.d < 992px) */
+@media (min-width: 600px) {
+    .main-container {
+        flex-direction: column; 
+    }
+    
+    nav {
+        width: 100%; 
+        overflow-x: auto; 
+        overflow-y: hidden;
+        padding-bottom: 5px; 
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+        width: 100%; 
+        gap: 10px;
+    }
+    
+    nav ul li {
+        flex: 1; 
+        margin-bottom: 0; 
+    }
+    
+    nav ul li a {
+        text-align: center; 
+        padding: 12px 10px; 
+    }
+
+    section {
+        width: 100%; 
+    }
+
+    aside {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    aside h2 {
+        margin-bottom: 0; 
+        white-space: nowrap;
+    }
+
+    aside ul {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+        width: 100%; 
+        gap: 10px;
+        margin-top: 0;
+    }
+
+    aside ul li {
+        flex: 1; 
+        margin-bottom: 0; 
+        text-align: center; 
+        padding: 12px 10px;
+    }
+    
+    /* Layout Footer menjadi sejajar horizontal di Tablet Portrait */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .footer-kiri {
+        text-align: left;
+        width: 33%;
+    }
+    .footer-tengah {
+        text-align: center;
+        width: 33%;
+    }
+    .footer-kanan {
+        text-align: right;
+        width: 33%;
+    }
+}
+
+
+/* 3. Layout Tablet Landscape (Lebar layar >= 992px s.d < 1200px) */
+@media (min-width: 992px) {
+    .main-container {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+    
+    nav {
+        width: 24%; 
+        margin-right: 1%;
+        overflow-y: auto; 
+        overflow-x: hidden;
+    }
+    
+    section {
+        width: 75%; 
+        margin-right: 0;
+        overflow-y: auto;
+    }
+    
+    aside {
+        width: 100%; 
+        margin-top: 10px;
+        overflow-y: auto;
+        display: block; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+    }
+    nav ul li {
+        flex: 1 1 auto;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        text-align: left;
+    }
+    
+    aside ul {
+        flex-direction: column;
+    }
+    aside ul li {
+        flex: 1 1 auto;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    aside h2 {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* 4. Layout Desktop (Lebar layar >= 1200px) */
+@media (min-width: 1200px) {
+    .main-container {
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: space-between;
+    }
+    
+    nav { width: 24%; margin-right: 1%; }
+    section { width: 49%; margin-right: 1%; }
+    aside { width: 25%; margin-top: 0; display: block; }
+}
